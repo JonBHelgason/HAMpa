@@ -1,4 +1,8 @@
 import { createDefaultSettings, db, type HampaDB } from './db';
+import {
+  convertLegacyBackup,
+  isLegacyHugsanaskraBackup,
+} from './legacyImport';
 import type {
   AppSettings,
   DiaryEntry,
@@ -12,6 +16,7 @@ export interface BackupSummary {
   thoughtRecordsCount: number;
   quickMoodsCount: number;
   diaryEntriesCount: number;
+  sourceLabel?: string;
 }
 
 export type ParseBackupResult =
@@ -105,6 +110,10 @@ export function parseAndValidateBackup(rawText: string): ParseBackupResult {
 
   if (!isObjectRecord(parsed)) {
     return { ok: false, error: 'Ógilt snið á afritsskrá.' };
+  }
+
+  if (isLegacyHugsanaskraBackup(parsed)) {
+    return convertLegacyBackup(parsed);
   }
 
   if (parsed.app !== 'HAMpa') {

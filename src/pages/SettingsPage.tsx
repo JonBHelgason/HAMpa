@@ -405,7 +405,8 @@ export function SettingsPage({ onBack }: SettingsPageProps) {
           </h2>
           <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
             Öll gögn eru geymd eingöngu í þessum vafra. Taktu reglulega afrit
-            til að geta flutt eða endurheimt gögnin.
+            til að geta flutt eða endurheimt gögnin — bæði HAMpa-afrit og eldri
+            JSON-afrit úr Hugsanaskrá virka.
           </p>
         </div>
 
@@ -465,6 +466,13 @@ export function SettingsPage({ onBack }: SettingsPageProps) {
             </div>
 
             <div className="space-y-1.5 rounded-xl border bg-[var(--bg-page)] p-3.5 text-xs text-[var(--text-primary)]">
+              {pendingRestore.summary.sourceLabel && (
+                <p className="mb-1">
+                  <span className="inline-block rounded-full bg-[var(--accent-soft)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--accent)]">
+                    {pendingRestore.summary.sourceLabel}
+                  </span>
+                </p>
+              )}
               <p>
                 <strong>Dagsetning afrits:</strong>{' '}
                 {formatIcelandicDate(

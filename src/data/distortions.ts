@@ -83,6 +83,22 @@ export const COGNITIVE_DISTORTIONS: CognitiveDistortion[] = [
       'Að taka á sig sökina fyrir hluti sem maður stjórnar ekki eða tengja viðbrögð annarra sjálfkrafa við sjálfan sig.',
     example: '„Andrúmsloftið var þungt við matarborðið — það hlýtur að vera mér að kenna.“',
   },
+  {
+    id: 'osangjarn-samanburdur',
+    name: 'Ósanngjarn samanburður',
+    shortDescription:
+      'Að bera sig saman við óraunhæfa staðla eða aðra á ósanngjarnan hátt og dæma sig út frá því.',
+    example:
+      '„Allir aðrir virðast hafa fulla stjórn á lífinu, ég ætti að vera kominn miklu lengra.“',
+  },
+  {
+    id: 'ykjun-og-smaettun',
+    name: 'Ýkjun og smættun',
+    shortDescription:
+      'Að gera mistök og erfiðleika mun stærri en þeir eru og draga um leið úr eigin styrkleikum.',
+    example:
+      '„Þessi litlu mistök eyðilögðu allt, en það sem ég gerði vel skiptir engu máli.“',
+  },
 ];
 
 const DISTORTION_MAP = new Map<string, CognitiveDistortion>(
