@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #f7f4ef;
+    --bg-surface: #fffdf9;
+    --bg-subtle: #efeae1;
+    --border: #e4ddd1;
+    --text-primary: #25211d;
+    --text-secondary: #6c6359;
+    --accent: #496a59;
+    --accent-hover: #3b5849;
+    --accent-soft: #e6efe9;
+    --accent-text: #ffffff;
+    --warning-bg: #fdf3e1;
+    --warning-text: #8a5a16;
+    --warning-border: #eed4a4;
+    --danger: #b54545;
+    --danger-soft: #faeaea;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg-page: #161412;
+    --bg-surface: #201d1a;
+    --bg-subtle: #2a2622;
+    --border: #38322c;
+    --text-primary: #f2ede6;
+    --text-secondary: #a69d93;
+    --accent: #82b097;
+    --accent-hover: #95bfa8;
+    --accent-soft: #223029;
+    --accent-text: #0e1310;
+    --warning-bg: #2e2416;
+    --warning-text: #f0c273;
+    --warning-border: #594322;
+    --danger: #e06c6c;
+    --danger-soft: #362020;
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: contain;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+}
+
+.page-shell {
+  padding-bottom: calc(5.25rem + env(safe-area-inset-bottom));
+}
+
+.bottom-nav-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Comfortable touch sliders */
+input[type="range"].hampa-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--bg-subtle);
+  outline: none;
+}
+
+input[type="range"].hampa-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--accent);
+  border: 2px solid var(--bg-surface);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+input[type="range"].hampa-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--accent);
+  border: 2px solid var(--bg-surface);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}

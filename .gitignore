@@ -1,0 +1,11 @@
+node_modules
+dist
+dev-dist
+.DS_Store
+*.local
+*.tsbuildinfo
+package-lock.json
+TilfHjol.jpg
+docs/lysing-a-virkni.md
+public/icon-192.png
+public/icon-512.png
